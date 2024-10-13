@@ -68,8 +68,14 @@ The data shows clear mathematical disparities in capital punishment opinions. Bl
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table2 <- xtabs(~cappun + race, data=mydata)
+rowPerc(table2)
+colPerc(table2)
+```
 
 
+The data shows the white group favors capital punishment with a ratio of about 2:1, meaning for every two people in favor, one is opposed. The black group is more evenly split but slightly against, suggesting their opposition is marginally higher than support. The "other" group opposes capital punishment more strongly, with a ratio of around 3:2, indicating for every three people opposed, two favor it. These ratios highlight differing levels of support and opposition across racial groups.
 
 
 
