@@ -83,10 +83,24 @@ The data shows the white group favors capital punishment with a ratio of about 2
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
-`
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+```
 
+The p-value obtained is 0.00005896, which is significantly low, indicating a strong likelihood of a meaningful association between the variables under investigation. Such a low p-value suggests that the observed results are not due to random chance, prompting further analysis. Therefore, it is essential to conduct a Fisher's exact test to determine the statistical significance and relationship between the groups more accurately. This test will provide a more nuanced understanding of the data and clarify the underlying patterns present in the sample.
+
+
+```{r}
+fisherXY(mydata$race, mydata$cappun, confL = 0.99, printAll = TRUE)
+```
+
+
+The p-values for the comparisons reveal distinct relationships between the racial groups. The p-value for the comparison between white and black respondents is 0.00001741, indicating a highly significant difference, suggesting a strong association in their opinions. In contrast, the comparison between white and other respondents yields a p-value of 0.2565, which is not statistically significant, indicating no meaningful difference in their views. Similarly, the p-value for the black and other group comparison is 0.06299, approaching significance but still above the conventional threshold. Overall, these p-values illustrate varying degrees of difference among the groups, highlighting significant disparities in opinions on capital punishment.
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+
